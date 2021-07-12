@@ -1,0 +1,23 @@
+#### 스프링 부트는 yml에서 일정 설정이 없으면 알아서 메모리 모드로 진입한다.
+#### 설정을 꼭 주고 싶다면 url을 jdbc:h2:mem:test로 주면된다.
+spring:
+#  datasource:
+#    url: jdbc:h2:mem:test
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+#
+#  jpa:
+#    hibernate:
+#### 스프링 부트는 메모리 모드는 ddl-auto를 create-drop으로 설정된다.
+#### 기존 create는 기존의 테이블을 drop을 먼저 진행한 후에 create를 진행하지만
+#### create-drop은 create를 먼저하고 나가기 전에 깔끔하게 모두 drop해버리고 종료한다.
+#      ddl-auto: create-drop
+#    properties:
+#      hibernate:
+#        show_sql: true
+#        format_sql: true
+
+logging.level:
+  org.hibernate.SQL: debug
+  org.hibernate.type: trace
